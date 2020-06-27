@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -35,36 +36,38 @@ public class LevelEditor : MonoBehaviour {
 	}
 
 	void Update() {
+		Vector2 nextMousePosition = Input.mousePosition + new Vector3(8f, 8f);
+		bool nextMouseDown = Input.GetMouseButton(0);
+
 		if (!EventSystem.current.IsPointerOverGameObject()) {
-			Vector2 nextMousePosition = Input.mousePosition + new Vector3(8f, 8f);
-			bool nextMouseDown = Input.GetMouseButton(0);
-
 			if (!prevMouseDown && nextMouseDown) tool?.OnMouseDown(this, ScreenToCell(nextMousePosition), nextMousePosition);
-			if (prevMouseDown && !nextMouseDown) tool?.OnMouseUp(this, ScreenToCell(nextMousePosition), nextMousePosition);
 
-			if (nextMouseDown) {
-				if (!isDragging && (prevMousePosition != nextMousePosition)) {
-					tool?.OnMouseStartDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
-					isDragging = true;
-				}
-
-				if (isDragging && !nextMouseDown) {
-					tool?.OnMouseEndDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
-					isDragging = false;
-				}
-
-				if (isDragging) tool?.OnMouseDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
-			} else {
-				isDragging = false;
+			if (!isDragging && nextMouseDown) {
+				tool?.OnMouseStartDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
+				isDragging = true;
 			}
-
-			prevMousePosition = nextMousePosition;
-			prevMouseDown = nextMouseDown;
 		}
+
+		if (prevMouseDown && !nextMouseDown) tool?.OnMouseUp(this, ScreenToCell(nextMousePosition), nextMousePosition);
+
+		if (isDragging && !nextMouseDown) {
+			tool?.OnMouseEndDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
+			isDragging = false;
+		}
+
+		if (isDragging) tool?.OnMouseDrag(this, ScreenToCell(nextMousePosition), nextMousePosition);
+		
+
+		prevMousePosition = nextMousePosition;
+		prevMouseDown = nextMouseDown;
 	}
 
 	public string GetIDAt(Vector2Int position) {
 		return levelCells.ContainsKey(position) ? levelCells[position].GetTileData().GetID() : "nulltile";
+	}
+
+	public Tile GetTileDataAt(Vector2Int position) {
+		return levelCells.ContainsKey(position) ? levelCells[position].GetTileData() : null;
 	}
 
 	public void SetTile(Vector2Int position, Tile tile) {
@@ -74,6 +77,7 @@ public class LevelEditor : MonoBehaviour {
 			GameObject newCell = Instantiate(levelEditorCell, grid.CellToLocal((Vector3Int) position), Quaternion.identity, grid.transform);
 			LevelEditorCell newLevelCell = newCell.GetComponent<LevelEditorCell>();
 			newLevelCell.SetTile(tile, this);
+			newLevelCell.levelEditor = this;
 			levelCells.Add(position, newLevelCell);
 		}
 
@@ -101,6 +105,14 @@ public class LevelEditor : MonoBehaviour {
 		return tileManager.GetTile(selectedTileID);
 	}
 
+	public void SetTile(string id) {
+		selectedTileID = id;
+	}
+
+	public bool CellExists(Vector2Int position) {
+		return levelCells.ContainsKey(position);
+	}
+
 	public Vector2Int ScreenToCell(Vector2 mousePosition) {
 		return (Vector2Int) grid.WorldToCell(Camera.main.ScreenToWorldPoint(mousePosition));
 	}
@@ -109,12 +121,59 @@ public class LevelEditor : MonoBehaviour {
 		return (Vector2Int) grid.WorldToCell(worldPosition);
 	}
 
+	public Vector2 CellToWorld(Vector2Int cellPosition) {
+		return grid.CellToWorld((Vector3Int)cellPosition);
+	}
+
 	public void SetTool(ILevelEditorTool tool) {
 		this.tool = tool;
+	}
+
+	public void AddWire(Vector2Int activator, Vector2Int target) {
+		levelCells[activator].AddWire(target);
 	}
 
 	//public Bounds GetExtents() {
 	//
 	//}
+
+	public void Export() {
+		SaveToFile("C:\\Users\\sepul\\Desktop", "level");
+	}
+
+	public void SaveToFile(string path, string name) {
+		XmlDocument newLevel = new XmlDocument();
+		XmlElement root = newLevel.CreateElement("LEVEL");
+		root.SetAttribute("id", name);
+		newLevel.AppendChild(root);
+
+		foreach (Vector2Int position in levelCells.Keys) {
+			Tile tile = levelCells[position].GetTileData();
+			XmlElement tileXML = newLevel.CreateElement("TILE");
+			tileXML.SetAttribute("type", $"{tile.GetID()}:{tile.GetSpriteID(levelCells[position].GetSpriteIndex())}");
+			tileXML.SetAttribute("x", $"{position.x}");
+			tileXML.SetAttribute("y", $"{position.y}");
+
+			LevelEditorCell.Wire[] connections = levelCells[position].GetConnections();
+
+			if (connections.Length > 0) {
+				XmlElement tileWireXML = newLevel.CreateElement("CONNECTIONS");
+				tileXML.AppendChild(tileWireXML);
+
+
+				foreach (LevelEditorCell.Wire wire in connections) {
+					XmlElement wireXML = newLevel.CreateElement("WIRE");
+					wireXML.SetAttribute("targetX", $"{wire.target.x}");
+					wireXML.SetAttribute("targetY", $"{wire.target.y}");
+
+					tileWireXML.AppendChild(wireXML);
+				}
+			}
+
+			root.AppendChild(tileXML);
+		}
+
+		newLevel.Save(path + "\\" + name + ".xml");
+	}
 
 }

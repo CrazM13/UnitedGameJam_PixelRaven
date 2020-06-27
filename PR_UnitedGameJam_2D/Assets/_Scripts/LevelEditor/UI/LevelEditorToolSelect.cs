@@ -13,6 +13,10 @@ public class LevelEditorToolSelect : MonoBehaviour {
 	public enum Tools { PAINT, ERASE, WIRE }
 	public Tools selectedTool;
 
+	public LevelEditorPaintTool paintTool = new LevelEditorPaintTool();
+	public LevelEditorEraseTool eraseTool = new LevelEditorEraseTool();
+	public LevelEditorWireTool wireTool = new LevelEditorWireTool();
+
 	private Toggle toggle;
 
 	private void Start() {
@@ -26,13 +30,13 @@ public class LevelEditorToolSelect : MonoBehaviour {
 
 			switch(selectedTool) {
 				case Tools.PAINT:
-					levelEditor.SetTool(new LevelEditorPaintTool());
+					levelEditor.SetTool(paintTool);
 					break;
 				case Tools.ERASE:
-					levelEditor.SetTool(new LevelEditorEraseTool());
+					levelEditor.SetTool(eraseTool);
 					break;
 				case Tools.WIRE:
-					levelEditor.SetTool(new LevelEditorPaintTool());
+					levelEditor.SetTool(wireTool);
 					break;
 			}
 			menu.SetSelected(this);

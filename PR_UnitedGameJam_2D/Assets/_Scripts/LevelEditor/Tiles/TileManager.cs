@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "TileManager", menuName = "LevelEditor/Tile Manager", order = 0)]
@@ -17,7 +18,11 @@ public class TileManager : ScriptableObject {
 	}
 
 	public Tile GetTile(string id) {
-		return tiles[id];
+		return tiles.ContainsKey(id) ? tiles[id] : null;
+	}
+
+	public Tile[] GetTiles() {
+		return tiles.Values.ToArray();
 	}
 
 }

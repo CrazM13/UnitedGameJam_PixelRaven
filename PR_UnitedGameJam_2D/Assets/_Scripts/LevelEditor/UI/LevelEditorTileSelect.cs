@@ -1,16 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-//[RequireComponent(typeof())]
+[RequireComponent(typeof(Button))]
 public class LevelEditorTileSelect : MonoBehaviour {
-	// Start is called before the first frame update
-	void Start() {
 
+	public string tileID = "nulltile";
+	public LevelEditor levelEditor;
+
+	private void Start() {
+		GetComponent<Button>().onClick.AddListener(() => {
+			levelEditor.SetTile(tileID);
+		});
 	}
 
-	// Update is called once per frame
-	void Update() {
-
-	}
 }

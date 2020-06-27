@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Assets\_Scripts\LevelEditor\LevelEditor.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\LevelEditorCell.cs" />
+    <Compile Include="Assets\_Scripts\LevelEditor\LevelLoader.cs" />
+    <Compile Include="Assets\_Scripts\LevelEditor\Tiles\GameTile.cs" />
+    <Compile Include="Assets\_Scripts\LevelEditor\Tiles\GameTileManager.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\Tiles\Overrides\Predicates\ITilePredicate.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\Tiles\Overrides\Predicates\IsNotTilePredicate.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\Tiles\Overrides\Predicates\IsTilePredicate.cs" />
@@ -75,6 +78,8 @@
     <Compile Include="Assets\_Scripts\LevelEditor\Tools\ILevelEditorTool.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\Tools\LevelEditorEraseTool.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\Tools\LevelEditorPaintTool.cs" />
+    <Compile Include="Assets\_Scripts\LevelEditor\Tools\LevelEditorWireTool.cs" />
+    <Compile Include="Assets\_Scripts\LevelEditor\UI\LevelEditorTileMenu.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\UI\LevelEditorTileSelect.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\UI\LevelEditorToolMenu.cs" />
     <Compile Include="Assets\_Scripts\LevelEditor\UI\LevelEditorToolSelect.cs" />

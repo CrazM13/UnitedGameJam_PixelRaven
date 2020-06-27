@@ -9,6 +9,7 @@ public class Tile {
 	private bool canActivateTiles;
 	private bool canBeActivated;
 	private Sprite[] sprites;
+	private string[] spriteIDs;
 
 	private TileOverride[] overrides;
 
@@ -64,8 +65,10 @@ public class Tile {
 		overrides = importOverrides.ToArray();
 
 		sprites = new Sprite[spriteStringsToLoad.Count];
+		spriteIDs = new string[spriteStringsToLoad.Count];
 		for (int i = 0; i < spriteStringsToLoad.Count; i++) {
 			sprites[i] = TileSpriteManager.Load(spriteStringsToLoad[i]);
+			spriteIDs[i] = spriteStringsToLoad[i];
 		}
 	}
 
@@ -78,8 +81,15 @@ public class Tile {
 		return 0;
 	}
 
+	public bool CanActivateTiles() { return canActivateTiles; }
+	public bool CanBeActivated() { return canBeActivated; }
+
 	public string GetID() {
 		return id;
+	}
+
+	public string GetSpriteID(int index) {
+		return spriteIDs[index];
 	}
 
 	public Sprite GetSprite(int index) {

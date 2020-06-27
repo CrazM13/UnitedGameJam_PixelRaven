@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class LevelEditorEraseTool : ILevelEditorTool {
 
 	public void OnMouseDown(LevelEditor levelEditor, Vector2Int cell, Vector2 mousePosition) {

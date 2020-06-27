@@ -2,14 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class LevelEditorPaintTool : ILevelEditorTool {
 
 	public void OnMouseDown(LevelEditor levelEditor, Vector2Int cell, Vector2 mousePosition) {
-		levelEditor.SetTile(cell, levelEditor.GetSelectedTile());
+		Tile selectedTile = levelEditor.GetSelectedTile();
+		if (selectedTile != null) levelEditor.SetTile(cell, selectedTile);
 	}
 
 	public void OnMouseDrag(LevelEditor levelEditor, Vector2Int cell, Vector2 mousePosition) {
-		levelEditor.SetTile(cell, levelEditor.GetSelectedTile());
+		Tile selectedTile = levelEditor.GetSelectedTile();
+		if (selectedTile != null) levelEditor.SetTile(cell, selectedTile);
 	}
 
 	public void OnMouseEndDrag(LevelEditor levelEditor, Vector2Int cell, Vector2 mousePosition) {
