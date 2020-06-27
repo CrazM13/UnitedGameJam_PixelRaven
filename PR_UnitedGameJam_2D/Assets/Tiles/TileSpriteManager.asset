@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f92d80b3147ef547a0d3f6cdad9bf91, type: 3}
+  m_Name: TileSpriteManager
+  m_EditorClassIdentifier: 
+  importSprites:
+  - id: test_0
+    sprite: {fileID: 4321694166131020052, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_1
+    sprite: {fileID: 8780742982115785219, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_2
+    sprite: {fileID: 5590379307816252184, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_3
+    sprite: {fileID: 7048975963514678346, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_4
+    sprite: {fileID: 2167656868899395163, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_5
+    sprite: {fileID: -7090314937418198257, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_6
+    sprite: {fileID: -9207619491540935481, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_7
+    sprite: {fileID: -6930728192495964856, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_8
+    sprite: {fileID: -105753239608308588, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_9
+    sprite: {fileID: -246217767482506895, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_10
+    sprite: {fileID: 2124513621288545032, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_11
+    sprite: {fileID: -9046139234172938514, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_12
+    sprite: {fileID: -9208223697242130667, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_13
+    sprite: {fileID: 3253921941308984696, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_14
+    sprite: {fileID: -5306039637863329129, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_15
+    sprite: {fileID: -4080186226746106390, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_16
+    sprite: {fileID: 6268415160331021974, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_17
+    sprite: {fileID: 86539098213955165, guid: 24ead734ac40585499404ebd85866180, type: 3}
+  - id: test_18
+    sprite: {fileID: -8075020618461558811, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}
+  - id: test_19
+    sprite: {fileID: -8144686775536719335, guid: 24ead734ac40585499404ebd85866180,
+      type: 3}

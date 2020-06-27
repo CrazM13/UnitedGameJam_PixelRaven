@@ -1,0 +1,115 @@
+<TILE id='test' activatable='false' activator='false'>
+	<SPRITE src='test_8' />
+	<OVERRIDES>
+		<PREDICATE sprite='test_0'>
+			<ISTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_1'>
+			<ISTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_2'>
+			<ISTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_7'>
+			<ISTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_9'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_14'>
+			<ISTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_15'>
+			<ISTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_16'>
+			<ISTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		
+		
+		<PREDICATE sprite='test_3'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_10'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_17'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		
+		
+		<PREDICATE sprite='test_4'>
+			<ISTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_5'>
+			<ISTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		<PREDICATE sprite='test_6'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+		
+		
+		
+		<PREDICATE sprite='test_13'>
+			<ISNOTTILE xOffset='1' id='test' />
+			<ISNOTTILE yOffset='-1' id='test' />
+			<ISNOTTILE xOffset='-1' id='test' />
+			<ISNOTTILE yOffset='1' id='test' />
+		</PREDICATE>
+	</OVERRIDES>
+</TILE>
