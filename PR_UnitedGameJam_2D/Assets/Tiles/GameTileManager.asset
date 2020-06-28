@@ -14,4 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseTilePrefab: {fileID: 1886430685050665312, guid: 29c25aa7d0b48d64cbc809cd5efebfe0,
     type: 3}
-  tileMaps: []
+  tileMaps:
+  - id: elevator:elevator
+    prefab: {fileID: 6164118163640567651, guid: 62030af9cb66f8546b243f0a1a5806da,
+      type: 3}
+  - id: spawn:spawn
+    prefab: {fileID: 2215018625415195353, guid: 23af2c65d2214104fbff07424c8d7c02,
+      type: 3}
+  - id: treasure:treasure
+    prefab: {fileID: 8163509587382052930, guid: e3922568171fe6e4cbf63edbe889e3fd,
+      type: 3}

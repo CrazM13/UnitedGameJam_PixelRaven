@@ -14,7 +14,7 @@ public class TileSpriteManager : ScriptableObject {
 
 	public void Init() {
 		foreach (SpriteImport s in importSprites) {
-			sprites.Add(s.id, s.sprite);
+			if (!sprites.ContainsKey(s.id)) sprites.Add(s.id, s.sprite);
 		}
 	}
 

@@ -20,7 +20,7 @@ public class Tile {
 		XmlElement root = importData["TILE"];
 		id = root.GetAttribute("id");
 		canActivateTiles = root.HasAttribute("activator") && bool.Parse(root.GetAttribute("activator"));
-		canActivateTiles = root.HasAttribute("activatable") && bool.Parse(root.GetAttribute("activatable"));
+		canBeActivated = root.HasAttribute("activatable") && bool.Parse(root.GetAttribute("activatable"));
 
 		List<string> spriteStringsToLoad = new List<string>();
 
@@ -28,39 +28,39 @@ public class Tile {
 
 		XmlElement overrideRoot = root["OVERRIDES"];
 		List<TileOverride> importOverrides = new List<TileOverride>();
-		foreach (XmlElement o in overrideRoot.ChildNodes) {
-			int spriteOverrrideID;
-			{
-				string spriteToLoad = o.GetAttribute("sprite");
+		if (overrideRoot != null) {
+			foreach (XmlElement o in overrideRoot.ChildNodes) {
+				int spriteOverrrideID;
+				{
+					string spriteToLoad = o.GetAttribute("sprite");
 
-				if (spriteStringsToLoad.Contains(spriteToLoad)) {
-					spriteOverrrideID = spriteStringsToLoad.IndexOf(spriteToLoad);
-				} else {
-					spriteOverrrideID = spriteStringsToLoad.Count;
-					spriteStringsToLoad.Add(spriteToLoad);
+					if (spriteStringsToLoad.Contains(spriteToLoad)) {
+						spriteOverrrideID = spriteStringsToLoad.IndexOf(spriteToLoad);
+					} else {
+						spriteOverrrideID = spriteStringsToLoad.Count;
+						spriteStringsToLoad.Add(spriteToLoad);
+					}
 				}
-			}
 
-			List<ITilePredicate> loadPredicates = new List<ITilePredicate>();
-			foreach (XmlElement p in o.ChildNodes) {
-				switch (p.LocalName) {
-					case "ISTILE":
-						{
+				List<ITilePredicate> loadPredicates = new List<ITilePredicate>();
+				foreach (XmlElement p in o.ChildNodes) {
+					switch (p.LocalName) {
+						case "ISTILE": {
 							int xOff = p.HasAttribute("xOffset") ? int.Parse(p.GetAttribute("xOffset")) : 0;
 							int yOff = p.HasAttribute("yOffset") ? int.Parse(p.GetAttribute("yOffset")) : 0;
 							loadPredicates.Add(new IsTilePredicate(new Vector2Int(xOff, yOff), p.GetAttribute("id")));
 						}
 						break;
-					case "ISNOTTILE":
-						{
+						case "ISNOTTILE": {
 							int xOff = p.HasAttribute("xOffset") ? int.Parse(p.GetAttribute("xOffset")) : 0;
 							int yOff = p.HasAttribute("yOffset") ? int.Parse(p.GetAttribute("yOffset")) : 0;
 							loadPredicates.Add(new IsNotTilePredicate(new Vector2Int(xOff, yOff), p.GetAttribute("id")));
 						}
 						break;
+					}
 				}
+				importOverrides.Add(new TileOverride(spriteOverrrideID, loadPredicates.ToArray()));
 			}
-			importOverrides.Add(new TileOverride(spriteOverrrideID, loadPredicates.ToArray()));
 		}
 		overrides = importOverrides.ToArray();
 

@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/_Scenes/MenuScenes/Main_Menu.unity
+    guid: 12400449780547d4bb4ce808014a4d15
+  - enabled: 1
+    path: Assets/_Scenes/GameScenes/LevelLoadingTest.unity
+    guid: aa9685580f44b9a49bb342b4c6d15aec
+  - enabled: 1
+    path: Assets/_Scenes/GameScenes/LevelEditor.unity
+    guid: d2bd155796de96142b94d8610826a2f4
+  - enabled: 1
+    path: Assets/_Scenes/GameScenes/WinScreen.unity
+    guid: b756ce63a3093c84c980e24d677140d4
+  - enabled: 1
+    path: Assets/_Scenes/GameScenes/LoseScene.unity
+    guid: 61c63a121cea2404cb0f117bc4c2e1dd
   m_configObjects: {}

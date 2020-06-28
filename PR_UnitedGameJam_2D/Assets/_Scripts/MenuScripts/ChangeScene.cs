@@ -6,9 +6,13 @@ using UnityEngine.SceneManagement;
 public class ChangeScene : MonoBehaviour
 {
     public int sceneChangeNumber;
-    private int sceneCount = SceneManager.sceneCountInBuildSettings;
+    private int sceneCount;
 
-    public void ChangeToLevel1()
+	private void Awake() {
+		sceneCount = SceneManager.sceneCountInBuildSettings;
+	}
+
+	public void ChangeToLevel1()
     {
         SceneManager.LoadScene(1);
     }

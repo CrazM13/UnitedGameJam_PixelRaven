@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tileImportFiles:
   - {fileID: 4900000, guid: ff6d2fd5892544d41a4a8b5f30d2f43f, type: 3}
+  - {fileID: 4900000, guid: 7389265312f23f440896974a91c2bd56, type: 3}
+  - {fileID: 4900000, guid: fc317afb8d4badf488688f3991786503, type: 3}
+  - {fileID: 4900000, guid: e2b080a85da2eec498fa03404507f3d1, type: 3}
+  - {fileID: 4900000, guid: 40ac6c62e48bd7e448ffe91d15dbcb89, type: 3}

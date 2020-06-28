@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/_Scenes/PersonalScenes/Rui_Scene.unity
+=======
+- path: Assets/_Scenes/MenuScenes/Main_Menu.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -1,0 +1,78 @@
+<LEVEL id="level">
+  <TILE type="test:test_5" x="-13" y="-7" />
+  <TILE type="test:test_5" x="-12" y="-7" />
+  <TILE type="test:test_5" x="-11" y="-7" />
+  <TILE type="test:test_5" x="-10" y="-7" />
+  <TILE type="test:test_5" x="-9" y="-7" />
+  <TILE type="test:test_5" x="-8" y="-7" />
+  <TILE type="test:test_5" x="-7" y="-7" />
+  <TILE type="test:test_5" x="-6" y="-7" />
+  <TILE type="test:test_5" x="-5" y="-7" />
+  <TILE type="test:test_5" x="-4" y="-7" />
+  <TILE type="test:test_5" x="-3" y="-7" />
+  <TILE type="test:test_5" x="-2" y="-7" />
+  <TILE type="test:test_2" x="-1" y="-7" />
+  <TILE type="test:test_14" x="-1" y="-8" />
+  <TILE type="test:test_5" x="0" y="-8" />
+  <TILE type="test:test_16" x="1" y="-8" />
+  <TILE type="test:test_10" x="1" y="-7" />
+  <TILE type="test:test_10" x="1" y="-6" />
+  <TILE type="test:test_10" x="1" y="-5" />
+  <TILE type="test:test_0" x="1" y="-4" />
+  <TILE type="test:test_5" x="2" y="-4" />
+  <TILE type="test:test_5" x="3" y="-4" />
+  <TILE type="test:test_5" x="4" y="-4" />
+  <TILE type="test:test_5" x="5" y="-4" />
+  <TILE type="test:test_5" x="6" y="-4" />
+  <TILE type="test:test_5" x="7" y="-4" />
+  <TILE type="test:test_5" x="8" y="-4" />
+  <TILE type="test:test_5" x="9" y="-4" />
+  <TILE type="treasure:treasure" x="8" y="-3" />
+  <TILE type="spawn:spawn" x="-12" y="-6" />
+  <TILE type="test:test_14" x="-14" y="-7" />
+  <TILE type="test:test_10" x="-14" y="-6" />
+  <TILE type="button:button" x="0" y="1">
+    <CONNECTIONS>
+      <WIRE targetX="0" targetY="-7" />
+    </CONNECTIONS>
+  </TILE>
+  <TILE type="test:test_10" x="-14" y="-3" />
+  <TILE type="test:test_10" x="-14" y="-4" />
+  <TILE type="test:test_10" x="-14" y="-5" />
+  <TILE type="test:test_10" x="-14" y="-2" />
+  <TILE type="test:test_10" x="-14" y="-1" />
+  <TILE type="test:test_10" x="-14" y="0" />
+  <TILE type="test:test_10" x="-14" y="1" />
+  <TILE type="test:test_0" x="-14" y="2" />
+  <TILE type="test:test_5" x="-13" y="2" />
+  <TILE type="test:test_5" x="-12" y="2" />
+  <TILE type="test:test_5" x="-11" y="2" />
+  <TILE type="test:test_5" x="-10" y="2" />
+  <TILE type="test:test_5" x="-9" y="2" />
+  <TILE type="test:test_5" x="-8" y="2" />
+  <TILE type="test:test_5" x="-7" y="2" />
+  <TILE type="test:test_5" x="-6" y="2" />
+  <TILE type="test:test_5" x="-5" y="2" />
+  <TILE type="test:test_5" x="-4" y="2" />
+  <TILE type="test:test_5" x="-3" y="2" />
+  <TILE type="test:test_5" x="-2" y="2" />
+  <TILE type="test:test_5" x="-1" y="2" />
+  <TILE type="test:test_5" x="0" y="2" />
+  <TILE type="test:test_5" x="1" y="2" />
+  <TILE type="test:test_5" x="2" y="2" />
+  <TILE type="test:test_5" x="3" y="2" />
+  <TILE type="test:test_5" x="4" y="2" />
+  <TILE type="test:test_5" x="5" y="2" />
+  <TILE type="test:test_5" x="6" y="2" />
+  <TILE type="test:test_5" x="7" y="2" />
+  <TILE type="test:test_5" x="8" y="2" />
+  <TILE type="test:test_5" x="9" y="2" />
+  <TILE type="test:test_2" x="10" y="2" />
+  <TILE type="test:test_10" x="10" y="1" />
+  <TILE type="test:test_10" x="10" y="0" />
+  <TILE type="test:test_10" x="10" y="-1" />
+  <TILE type="test:test_10" x="10" y="-2" />
+  <TILE type="test:test_10" x="10" y="-3" />
+  <TILE type="test:test_16" x="10" y="-4" />
+  <TILE type="elevator:elevator" x="0" y="-7" />
+</LEVEL>

@@ -1,0 +1,3 @@
+<TILE id='button' activatable='false' activator='true'>
+	<SPRITE src='button' />
+</TILE>

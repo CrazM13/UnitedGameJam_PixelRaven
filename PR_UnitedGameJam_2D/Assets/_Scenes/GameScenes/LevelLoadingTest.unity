@@ -179,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameTileManager: {fileID: 11400000, guid: 758e0da9973f59b47ac3dd0714ab62ed, type: 2}
   spriteManager: {fileID: 11400000, guid: 748513c3c99972b49b4033c7a6d2e061, type: 2}
-  level: {fileID: 4900000, guid: ffcbaccfdd2e5b24a969d38769fadfe1, type: 3}
+  levels: {fileID: 11400000, guid: 344b3a1ce87f0bd43b08a98350fa860c, type: 2}
 --- !u!1 &861667906
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,6 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 861667909}
   - component: {fileID: 861667908}
+  - component: {fileID: 861667910}
   - component: {fileID: 861667907}
   m_Layer: 0
   m_Name: Main Camera
@@ -263,3 +264,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861667910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861667906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 495ec650e7a7433408510f25861ce316, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

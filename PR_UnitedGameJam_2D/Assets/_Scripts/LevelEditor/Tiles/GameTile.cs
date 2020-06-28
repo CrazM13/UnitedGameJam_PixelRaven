@@ -14,15 +14,8 @@ public class GameTile : MonoBehaviour {
 	private void OnCollisionEnter2D(Collision2D collision) {
 		if (CanActivateTiles && collision.gameObject.CompareTag("Bullet")) {
 			ActivateTargets();
+			Destroy(collision.gameObject);
 		}
-	}
-
-	void Start() {
-
-	}
-
-	void Update() {
-
 	}
 
 	public void ActivateTargets() {

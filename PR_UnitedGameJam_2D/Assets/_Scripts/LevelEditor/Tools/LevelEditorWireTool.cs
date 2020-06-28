@@ -42,7 +42,7 @@ public class LevelEditorWireTool : ILevelEditorTool {
 	}
 
 	public void OnMouseStartDrag(LevelEditor levelEditor, Vector2Int cell, Vector2 mousePosition) {
-		if (!levelEditor.GetTileDataAt(cell).CanActivateTiles()) return;
+		if (!levelEditor.CellExists(cell) || !levelEditor.GetTileDataAt(cell).CanActivateTiles()) return;
 
 		isWiring = true;
 		start = levelEditor.CellToWorld(cell);

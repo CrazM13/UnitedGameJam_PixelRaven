@@ -1,0 +1,3 @@
+<TILE id='treasure' activatable='false' activator='false'>
+	<SPRITE src='treasure' />
+</TILE>

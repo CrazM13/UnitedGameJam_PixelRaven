@@ -8,7 +8,7 @@ public class LevelLoader : MonoBehaviour {
 	public GameTileManager gameTileManager;
 	public TileSpriteManager spriteManager;
 
-	public TextAsset level;
+	public LoadStorageObject levels;
 
 	private Dictionary<Vector2Int, GameTile> tiles = new Dictionary<Vector2Int, GameTile>();
 
@@ -30,7 +30,7 @@ public class LevelLoader : MonoBehaviour {
 
 	public void Load() {
 		XmlDocument importData = new XmlDocument();
-		importData.LoadXml(level.text);
+		importData.LoadXml(levels.GetLevel().text);
 
 		XmlElement root = importData["LEVEL"];
 		
@@ -38,7 +38,9 @@ public class LevelLoader : MonoBehaviour {
 			string id = tile.GetAttribute("type");
 
 			GameObject newTile = gameTileManager.GetPrefabByID(id);
-			if (!newTile) newTile = gameTileManager.GenerateTileByID(id);
+			if (!newTile) newTile = gameTileManager.GenerateTileByID(id, tile["CONNECTIONS"] != null, false);
+
+			newTile.GetComponent<GameTile>().level = this;
 
 			newTile.transform.SetParent(transform);
 			
@@ -58,8 +60,20 @@ public class LevelLoader : MonoBehaviour {
 
 	}
 
+	public bool IsTileAt(Vector2Int position) {
+		return tiles.ContainsKey(position);
+	}
+
 	public void Activate(Vector2Int target) {
 		tiles[target].AttemptActivate();
+	}
+
+	public Vector2Int WorldToCell(Vector2 worldPosition) {
+		return (Vector2Int) grid.WorldToCell(worldPosition);
+	}
+
+	public Vector2 CellToWorld(Vector2Int cellPosition) {
+		return grid.CellToWorld((Vector3Int) cellPosition);
 	}
 
 }

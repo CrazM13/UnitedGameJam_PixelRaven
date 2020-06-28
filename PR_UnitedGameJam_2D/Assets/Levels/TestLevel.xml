@@ -1,0 +1,23 @@
+<LEVEL id="level">
+  <TILE type="test:test_4" x="-8" y="-4" />
+  <TILE type="test:test_5" x="-7" y="-4" />
+  <TILE type="test:test_5" x="-6" y="-4" />
+  <TILE type="test:test_5" x="-5" y="-4" />
+  <TILE type="test:test_5" x="-4" y="-4" />
+  <TILE type="test:test_5" x="-3" y="-4" />
+  <TILE type="test:test_5" x="-2" y="-4" />
+  <TILE type="test:test_5" x="-1" y="-4" />
+  <TILE type="test:test_5" x="0" y="-4" />
+  <TILE type="test:test_5" x="1" y="-4" />
+  <TILE type="test:test_5" x="2" y="-4" />
+  <TILE type="test:test_5" x="3" y="-4" />
+  <TILE type="test:test_5" x="4" y="-4" />
+  <TILE type="test:test_6" x="5" y="-4" />
+  <TILE type="spawn:spawn" x="-6" y="-3" />
+  <TILE type="elevator:elevator" x="2" y="-3" />
+  <TILE type="button:button" x="-3" y="2">
+    <CONNECTIONS>
+      <WIRE targetX="2" targetY="-3" />
+    </CONNECTIONS>
+  </TILE>
+</LEVEL>
