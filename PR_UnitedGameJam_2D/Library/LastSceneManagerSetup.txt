@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< Updated upstream
 - path: Assets/_Scenes/MenuScenes/Main_Menu.unity
+=======
+- path: C:/Users/Stephen Brown/Desktop/2DCharacterControllerTutorial-master/Assets/Main.unity
+>>>>>>> Stashed changes
   isLoaded: 1
   isActive: 1
   isSubScene: 0
